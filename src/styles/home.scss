@@ -1,0 +1,68 @@
+header,
+footer {
+    h1 {
+        margin: 0;
+    }
+
+    span {
+        display: block;
+        font-size: 1rem;
+    }
+
+    span.name {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    span.title {
+        font-weight: 500;
+    }
+
+    span a.social {
+        margin-right: 0.5em;
+    }
+}
+
+main {
+    p {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.row {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.portrait {
+    img {
+        z-index: -1;
+        position: fixed;
+        bottom: -20%;
+        left: 50%;
+        transform: translate(-50%);
+        height: 800px;
+        max-height: 100%;
+    }
+}
+
+.animation__slide-fade-in{
+    animation-name: slideFadeIn;
+    animation-duration: 1200ms;
+}
+
+@keyframes slideFadeIn{
+    from {
+        transform: translateY(1em);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0em);
+        opacity: 1;
+    }
+}
