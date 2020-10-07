@@ -3,7 +3,7 @@
 $brandBlue: rgb(1, 36, 86);
 $mainFontColor: rgb(0, 0, 0);
 $linkFontColor: rgb(0, 120, 212);
-$backgroundColor: rgb( 255, 255, 255);
+$backgroundColor: rgb(255, 255, 255);
 
 body,
 html {
@@ -50,7 +50,7 @@ a {
         -o-transition: transform 0.3s cubic-bezier(0.25, 1, 0.25, 1);
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.25, 1);
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.25, 1),
-        -webkit-transform 0.3s cubic-bezier(0.25, 1, 0.25, 1);
+            -webkit-transform 0.3s cubic-bezier(0.25, 1, 0.25, 1);
     }
 
     &:active::before,

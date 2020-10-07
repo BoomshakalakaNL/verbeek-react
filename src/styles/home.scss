@@ -30,6 +30,14 @@ main {
     }
 }
 
+header,
+main,
+footer {
+    position: relative;
+    opacity: 0;
+    top: 20px;
+}
+
 .container {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -41,6 +49,7 @@ main {
 
 .portrait {
     img {
+        opacity: 0;
         z-index: -1;
         position: fixed;
         bottom: -20%;
@@ -48,21 +57,5 @@ main {
         transform: translate(-50%);
         height: 800px;
         max-height: 100%;
-    }
-}
-
-.animation__slide-fade-in{
-    animation-name: slideFadeIn;
-    animation-duration: 1200ms;
-}
-
-@keyframes slideFadeIn{
-    from {
-        transform: translateY(1em);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0em);
-        opacity: 1;
     }
 }

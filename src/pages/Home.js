@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import "../styles/home.scss";
 import portrait from "../assets/images/bw_portrait.jpg";
 
+import { TweenLite, Power3 } from "gsap";
+
 const Home = () => {
     const name = "Scott Verbeek";
     const title = "Software Engineer";
@@ -31,6 +33,14 @@ const Home = () => {
         document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
     });
 
+    const startAnimations = () => {
+        document.getElementById("page-loader").remove();
+        TweenLite.to(".portrait img", .6, {opacity: 1, ease: Power3.easeInOut});
+        TweenLite.to("header", .6, { opacity: 1, y: -20, ease: Power3.ease }).delay(1);
+        TweenLite.to("main", .6, { opacity: 1, y: -20, ease: Power3.ease }).delay(1.2);
+        TweenLite.to("footer", .6, { opacity: 1, y: -20, ease: Power3.ease }).delay(1.4);
+    };
+
     return (
         <>
             <div className="container">
@@ -45,7 +55,11 @@ const Home = () => {
                 </div>
             </div>
             <div className="portrait">
-                <img src={portrait} alt="" />
+                <img 
+                    src={portrait} 
+                    alt="" 
+                    onLoad={ startAnimations }
+                />
             </div>
         </>
     );
@@ -53,7 +67,7 @@ const Home = () => {
 
 const Header = ({ name, title }) => (
     <header>
-        <h1 className="animation__slide-fade-in">
+        <h1>
             <span className="name">{name}</span>
             <span className="title">{title}</span>
         </h1>
@@ -62,9 +76,7 @@ const Header = ({ name, title }) => (
 
 const Main = ({ description }) => (
     <main className="mb-4">
-        <p className="animation__slide-fade-in">
-            <ReactMarkdown source={description} />
-        </p>
+        <ReactMarkdown source={description} />
     </main>
 );
 
@@ -77,7 +89,7 @@ const Footer = ({ socials }) => {
     }
 
     return (
-        <footer className="animation__slide-fade-in">
+        <footer>
             <span>
                 <b>Let's connect</b>
             </span>
