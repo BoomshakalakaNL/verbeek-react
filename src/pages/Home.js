@@ -83,8 +83,8 @@ const Main = ({ description }) => (
 const Footer = ({ socials }) => {
     var socialLinks = " ";
     if (socials.length) {
-        socialLinks = socials.map((social) => {
-            return <SocialLink name={social.name} link={social.link} />;
+        socialLinks = socials.map((social, index) => {
+            return <SocialLink key={index} name={social.name} link={social.link} />;
         });
     }
 
